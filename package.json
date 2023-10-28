@@ -4,9 +4,10 @@
 	"description": "Coastal Freeze Downloadable Client",
 	"productName": "Club Penguin Desktop",
 	"main": "main.js",
-	"scripts": {
-		"start": "electron ."
-	},
+ "scripts": {
+  "start": "electron .",
+  "build": "electron-builder build --win --publish never"
+ },
 	"repository": "https://github.com/MarioDev93/Coastal-Freeze",
 	"keywords": [
 		"coastal",
