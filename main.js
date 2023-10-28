@@ -31,9 +31,7 @@ const {autoUpdater} = require("electron-updater");
 
 const DiscordRPC = require('discord-rpc');
 
-const aboutMessage = `Coastal Freeze Client v${app.getVersion()}
-Created by Allinol and Random for use with Coastal Freeze.
-Owners of Coastal Freeze: Fliberjig1 and Snickerdoodle`;
+const aboutMessage = `Club Penguin Desktop v${app.getVersion()}`;
 
 
 /**
@@ -89,7 +87,7 @@ function activateRPC() {
   const startTimestamp = new Date();
   rpc.on('ready', () => {
     rpc.setActivity({
-      details: `coastalfreeze.net`, 
+      details: `play.cppscreator.com/embed/30363`, 
       state: `Desktop Client`, 
       startTimestamp, 
       largeImageKey: imageName
@@ -147,7 +145,7 @@ function createMenu() {
                         dialog.showMessageBox({
                             type: "info",
                             buttons: ["Ok"],
-                            title: "About Coastal Freeze",
+                            title: "About Club Penguin Desktop",
                             message: aboutMessage
                         });
                     }
@@ -168,16 +166,6 @@ function createMenu() {
                         mainWindow.webContents.send('muted', mainWindow.webContents.audioMuted);
                     }
                 },
-                {
-                    label: 'Dark Mode (Toggle)',
-                    click: () => {
-                        darkMode()
-                    }
-                },
-                {
-                    label: 'Log Out',
-					click: () => clearCacheAndReload()
-                }
             ]
         }));
     } else {
@@ -187,7 +175,7 @@ function createMenu() {
                 dialog.showMessageBox({
                     type: "info",
                     buttons: ["Ok"],
-                    title: "About Coastal Freeze",
+                    title: "About Club Penguin Desktop",
                     message: aboutMessage
                 });
             }
@@ -207,16 +195,6 @@ function createMenu() {
                 mainWindow.webContents.send('muted', mainWindow.webContents.audioMuted);
             }
         }));
-        fsmenu.append(new MenuItem({
-            label: 'Dark Mode (Toggle)',
-            click: () => {
-                darkMode()
-            }
-        }));
-        fsmenu.append(new MenuItem({
-            label: 'Log Out',
-            click: () => clearCacheAndReload()
-        }));
     }
 	return fsmenu
 }
@@ -230,7 +208,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     useContentSize: true,
     show: false,
-    title: "Coastal Freeze",
+    title: "Club Penguin Desktop",
     webPreferences: {
 	  preload: path.join(__dirname, './preload.js'),
       plugins: true,
@@ -240,7 +218,7 @@ function createWindow () {
   })
   registerKeys()
   Menu.setApplicationMenu(createMenu());
-  mainWindow.loadURL('https://play.coastalfreeze.net/client/');
+  mainWindow.loadURL('https://play.cppscreator.com/embed/30363');
   
 }
 
